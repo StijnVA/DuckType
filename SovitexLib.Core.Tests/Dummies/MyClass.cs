@@ -1,4 +1,4 @@
-﻿using SovitexLib.Core.Smart;
+﻿using SovitexLib.Core.Smart.Attributes;
 
 namespace SovitexLib.Core.Tests.Dummies
 {

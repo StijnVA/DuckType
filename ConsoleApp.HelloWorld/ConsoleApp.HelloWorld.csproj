@@ -2,7 +2,18 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="5.2.0" />
+      <PackageReference Include="FluentValidation" Version="8.6.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Sovitex.Adaptors.Autofac\Sovitex.Adaptors.Autofac.csproj" />
+      <ProjectReference Include="..\SovitexLib.Adaptors.FluentValidation\SovitexLib.Adaptors.FluentValidation.csproj" />
+      <ProjectReference Include="..\SovitexLib.Core\SovitexLib.Core.csproj" />
+    </ItemGroup>
 
 </Project>

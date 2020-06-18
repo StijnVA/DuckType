@@ -15,7 +15,7 @@ namespace SovitexLib.Core.Smart
         public void Intercept(IInvocation invocation)
         {
             if (invocation.Method ==
-                typeof(ISmartObject<TEntity>).GetProperty(nameof(ISmartObject<TEntity>.SmartController)).GetMethod)
+                typeof(ISmartObject<TEntity>).GetProperty(nameof(ISmartObject<TEntity>.SmartController))?.GetMethod)
             {
                 invocation.ReturnValue = _smartController;
             }
@@ -24,6 +24,7 @@ namespace SovitexLib.Core.Smart
                 var smartContext = new SmartContext();
                 _smartController.HandleBefore(invocation, smartContext);
                 invocation.Proceed();
+                _smartController.HandleAfter(invocation, smartContext);
             }
         }
     }

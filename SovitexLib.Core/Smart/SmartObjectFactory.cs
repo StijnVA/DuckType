@@ -3,19 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Castle.DynamicProxy;
+using SovitexLib.Internals;
 
 namespace SovitexLib.Core.Smart
 {
     public class SmartObjectFactory
     {
         private static readonly SmartObjectFactory Instance = new SmartObjectFactory();
-        
+
+        public static void SetResolver(IResolver resolver)
+        {
+            Instance.SetResolverInternal(resolver);
+        }
+
+        private void SetResolverInternal(IResolver resolver)
+        {
+            _resolver = resolver;
+        }
+
         public static T GenerateSmartObject<T>(T original) where T : class
         {
            return  Instance.GenerateSmartObjectInternal(original);
         }
 
         private readonly ProxyGenerator _proxyGenerator = new ProxyGenerator();
+        private IResolver _resolver;
 
         private TEntity GenerateSmartObjectInternal<TEntity>(TEntity obj)
         {
@@ -27,19 +39,29 @@ namespace SovitexLib.Core.Smart
                     additionalInterfacesToProxy, obj, interceptor)
                 : (TEntity) _proxyGenerator.CreateClassProxyWithTarget(typeof(TEntity),
                     additionalInterfacesToProxy, obj, interceptor);
-
             
-            ConfigureSmartControllerFromAttributes(smartController);
+            ConfigureSmartControllerFromPropertyAttributes(smartController);
+            ConfigureSmartControllerFromActionAttributes(smartController);
+            ConfigureSmartControllerFromClassAttributes(smartController);
             
             return proxy;
         }
 
-        private void ConfigureSmartControllerFromAttributes<TEntity>(SmartController<TEntity> smartController)
+        private void ConfigureSmartControllerFromClassAttributes<TEntity>(SmartController<TEntity> smartController)
         {
-            var propertiesAndAttributes=smartController.Entity.GetType().GetProperties().Select(p => (p, p.GetCustomAttributes(true)));
+            var attributes = smartController.Entity.GetType().GetCustomAttributes(typeof(ISmartAttribute), true).Cast<ISmartAttribute>();
+            foreach (var attribute in attributes)
+            {
+                smartController.AddHandler(new SmartClassHandler((ISmartClassBehavior)attribute.GetBehavior(_resolver)));
+            }
+        }
+
+        private void ConfigureSmartControllerFromPropertyAttributes<TEntity>(SmartController<TEntity> smartController)
+        {
+            var propertiesAndAttributes=smartController.Entity.GetType().GetProperties().Select(p => (p, p.GetCustomAttributes(typeof(ISmartAttribute),true).Cast<ISmartAttribute>()));
             foreach (var (propertyInfo, attributes) in propertiesAndAttributes)
             {
-                foreach (dynamic attribute in attributes)
+                foreach (var attribute in attributes)
                 {
                     var entityType = smartController.Entity.GetType();
                     var parameter = Expression.Parameter(entityType, "entity");
@@ -51,12 +73,25 @@ namespace SovitexLib.Core.Smart
                         .MakeGenericType(
                             entityType,
                             propertyInfo.PropertyType);
-                    var handler = Activator.CreateInstance(type, attribute.GetBehavior(), propertySelector);
+                    dynamic handler = Activator.CreateInstance(type, attribute.GetBehavior(_resolver), propertySelector);
                     smartController.AddHandler(handler);
                 }
             }
         }
 
+        private void ConfigureSmartControllerFromActionAttributes<TEntity>(SmartController<TEntity> smartController)
+        {
+            var actionsAndAttributes=smartController.Entity.GetType().GetMethods().Select(p => (p, p.GetCustomAttributes(typeof(ISmartAttribute),true).Cast<ISmartAttribute>()));
+            foreach (var (memberInfo, attributes) in actionsAndAttributes)
+            {
+                foreach (var attribute in attributes)
+                {
+                    var behavior =  attribute.GetBehavior(_resolver) as ISmartActionBehavior; 
+                    smartController.AddHandler(new SmartActionHandler<TEntity>(memberInfo, behavior));
+                }
+            }
+        }
+        
         private static IEnumerable<Type> GetAdditionalInterfacesToProxy<TEntity>(TEntity obj)
         {            
             //The proxy should be recognisable as an instance of all base types of the object

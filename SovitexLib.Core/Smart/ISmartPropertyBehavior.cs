@@ -1,6 +1,6 @@
 ﻿namespace SovitexLib.Core.Smart
 {
-    public interface ISmartPropertyBehavior<TProperty>
+    public interface ISmartPropertyBehavior<in TProperty> : ISmartBehavior
     {
         void BeforeSetValue(TProperty value);
     }

@@ -29,7 +29,15 @@ namespace SovitexLib.Core.Smart
         {
             foreach (var smartHandler in _smartHandlers)
             {
-                smartHandler.Handle(invocation, smartContext, Entity);
+                (smartHandler as ISmartBeforeHandler)?.HandleBefore(invocation, smartContext, Entity);
+            }
+        }
+        
+        public void HandleAfter(IInvocation invocation, SmartContext smartContext)
+        {
+            foreach (var smartHandler in _smartHandlers)
+            {
+                (smartHandler as ISmartAfterHandler)?.HandleAfter(invocation, smartContext, Entity);
             }
         }
 
@@ -37,5 +45,7 @@ namespace SovitexLib.Core.Smart
         {
             _smartHandlers.Add(smartHandler);
         }
+
+    
     }
 }

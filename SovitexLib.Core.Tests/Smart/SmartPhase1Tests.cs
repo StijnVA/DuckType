@@ -68,7 +68,7 @@ namespace SovitexLib.Core.Tests.Smart
             var smart = original.MakeSmart();
             smart.GetSmartController()
                 .ForAction(e => e.DoStuff())
-                .AddBehavior(new Vampire(dayNightProvider));
+                .AddBehavior(new VampireBehavior(dayNightProvider));
             smart.Invoking(s => s.DoStuff()).Should().Throw<Exception>();
         }
 
@@ -84,7 +84,7 @@ namespace SovitexLib.Core.Tests.Smart
             var smart = original.MakeSmart();
             smart.GetSmartController()
                 .ForAction(e => e.DoStuff())
-                .AddBehavior(new Vampire(dayNightProvider));
+                .AddBehavior(new VampireBehavior(dayNightProvider));
             smart.Invoking(s => s.DoStuff()).Should().NotThrow<Exception>();
         }
     }

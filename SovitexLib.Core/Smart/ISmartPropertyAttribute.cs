@@ -1,8 +1,13 @@
-﻿namespace SovitexLib.Core.Smart
+﻿using SovitexLib.Internals;
+
+namespace SovitexLib.Core.Smart
 {
-    internal interface ISmartPropertyAttribute<TProperty>
+    public interface ISmartPropertyAttribute<TProperty> : ISmartAttribute<ISmartPropertyBehavior<TProperty>>
     {
-        // ReSharper disable once UnusedMember.Global
-        ISmartPropertyBehavior<TProperty> GetBehavior();
+    }
+
+    public interface ISmartAttribute
+    {
+        ISmartBehavior GetBehavior(IResolver resolver);
     }
 }

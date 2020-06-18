@@ -19,13 +19,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SovitexLib.Internals", "Sov
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.HelloWorld", "ConsoleApp.HelloWorld\ConsoleApp.HelloWorld.csproj", "{A0814DF2-B4E5-40D6-9027-F73C14B51F4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sovitex.Internals.AutofacAdaptors", "Sovitex.Internals.AutofacAdaptors\Sovitex.Internals.AutofacAdaptors.csproj", "{64353F83-EAAB-4638-B84C-1DC96E803AB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sovitex.Adaptors.Autofac", "Sovitex.Adaptors.Autofac\Sovitex.Adaptors.Autofac.csproj", "{64353F83-EAAB-4638-B84C-1DC96E803AB4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SovitexLib.TestUtils", "SovitexLib.TestUtils\SovitexLib.TestUtils.csproj", "{22819AD2-4D54-4249-8AA6-3E865AB9D793}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SovitexLib.Core.Tests", "SovitexLib.Core.Tests\SovitexLib.Core.Tests.csproj", "{8160A25A-C1E7-4AF9-9CDD-F59781E53FE1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceImplementations", "ReferenceImplementations", "{F824B84F-FC33-4588-86CC-ED4C7FC0F642}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentValidation", "FluentValidation", "{EABA09CE-9D7F-44D1-96F3-DBD7D879B4D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SovitexLib.Adaptors.FluentValidation", "SovitexLib.Adaptors.FluentValidation\SovitexLib.Adaptors.FluentValidation.csproj", "{5EB80992-9CF5-48E8-8AE2-26565B7E11D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,10 @@ Global
 		{8160A25A-C1E7-4AF9-9CDD-F59781E53FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8160A25A-C1E7-4AF9-9CDD-F59781E53FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8160A25A-C1E7-4AF9-9CDD-F59781E53FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB80992-9CF5-48E8-8AE2-26565B7E11D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB80992-9CF5-48E8-8AE2-26565B7E11D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB80992-9CF5-48E8-8AE2-26565B7E11D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB80992-9CF5-48E8-8AE2-26565B7E11D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7C94D017-ABB9-4D83-A2A3-EB3B0F051A6B} = {565A4D26-46AB-4D57-8190-9422239A775F}
@@ -66,5 +74,7 @@ Global
 		{64353F83-EAAB-4638-B84C-1DC96E803AB4} = {7308E5BE-5047-4B37-9230-17FB47EA6154}
 		{22819AD2-4D54-4249-8AA6-3E865AB9D793} = {565A4D26-46AB-4D57-8190-9422239A775F}
 		{8160A25A-C1E7-4AF9-9CDD-F59781E53FE1} = {565A4D26-46AB-4D57-8190-9422239A775F}
+		{EABA09CE-9D7F-44D1-96F3-DBD7D879B4D5} = {E1AC827A-6112-4DE5-A94F-26A6E3887089}
+		{5EB80992-9CF5-48E8-8AE2-26565B7E11D1} = {EABA09CE-9D7F-44D1-96F3-DBD7D879B4D5}
 	EndGlobalSection
 EndGlobal

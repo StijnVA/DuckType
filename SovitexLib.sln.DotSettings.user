@@ -1,11 +1,4 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d76cde84_002Dadf5_002D4987_002Dba8b_002D7922f03a35d6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="SmartObjectShouldEqualsTheOriginal" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::8160A25A-C1E7-4AF9-9CDD-F59781E53FE1::.NETCoreApp,Version=v3.1::SovitexLib.Core.Tests.Smart.SmartTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::8160A25A-C1E7-4AF9-9CDD-F59781E53FE1::.NETCoreApp,Version=v3.1::SovitexLib.Core.Tests.Smart.DuckTypeTests.DuckTypeAnAnonymousObject&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::8160A25A-C1E7-4AF9-9CDD-F59781E53FE1::.NETCoreApp,Version=v3.1::SovitexLib.Core.Tests.Smart.DuckTypeTests.DuckTypeAnAnonymousObjectHeveWritableProperties&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::8160A25A-C1E7-4AF9-9CDD-F59781E53FE1::.NETCoreApp,Version=v3.1::SovitexLib.Core.Tests.Smart.DuckTypeTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::8160A25A-C1E7-4AF9-9CDD-F59781E53FE1::.NETCoreApp,Version=v3.1::SovitexLib.Core.Tests.Smart.SmartPhase1Tests.SmartObjectShouldEqualsTheOriginal&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::8160A25A-C1E7-4AF9-9CDD-F59781E53FE1::.NETCoreApp,Version=v3.1::SovitexLib.Core.Tests.Smart.SmartPhase1Tests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=122cfff6_002Df7ea_002D44cb_002Db3e1_002D36ed8eb24cd7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;Core&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Dev\Sovitex\SovitexLib" Presentation="&amp;lt;Core&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

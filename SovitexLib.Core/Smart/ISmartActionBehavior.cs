@@ -2,7 +2,7 @@
 
 namespace SovitexLib.Core.Smart
 {
-    public interface ISmartActionBehavior
+    public interface ISmartActionBehavior : ISmartBehavior
     {
         void BeforeInvocation(MethodInfo invocationMethod);
     }

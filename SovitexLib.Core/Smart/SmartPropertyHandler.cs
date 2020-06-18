@@ -7,7 +7,7 @@ using SovitexLib.Core.Extensions;
 
 namespace SovitexLib.Core.Smart
 {
-    public class SmartPropertyHandler<TEntity, TProperty> : ISmartHandler
+    public class SmartPropertyHandler<TEntity, TProperty> : ISmartBeforeHandler
     {
         private readonly ISmartPropertyBehavior<TProperty> _propertyBehavior;
         private readonly Expression<Func<TEntity, TProperty>> _propertySelector;
@@ -18,7 +18,7 @@ namespace SovitexLib.Core.Smart
             _propertySelector = propertySelector;
         }
 
-        public void Handle(IInvocation invocation, SmartContext smartContext, object entity)
+        public void HandleBefore(IInvocation invocation, SmartContext smartContext, object entity)
         {
             if (IsInvocationOfPropertySet(invocation))
             {
