@@ -1,6 +1,6 @@
 using System;
-using SovitexLib.Adaptors.FluentValidation;
-using SovitexLib.Core.Smart.Attributes;
+using DuckType.Adaptors.FluentValidation;
+using DuckType.Core.Smart.Attributes;
 
 namespace ConsoleApp.HelloWorld
 {

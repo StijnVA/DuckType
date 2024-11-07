@@ -11,9 +11,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Sovitex.Adaptors.Autofac\Sovitex.Adaptors.Autofac.csproj" />
-      <ProjectReference Include="..\SovitexLib.Adaptors.FluentValidation\SovitexLib.Adaptors.FluentValidation.csproj" />
-      <ProjectReference Include="..\SovitexLib.Core\SovitexLib.Core.csproj" />
+      <ProjectReference Include="..\DuckType.Adaptors.Autofac\DuckType.Adaptors.Autofac.csproj" />
+      <ProjectReference Include="..\DuckType.Adaptors.FluentValidation\DuckType.Adaptors.FluentValidation.csproj" />
+      <ProjectReference Include="..\DuckType.Core\DuckType.Core.csproj" />
     </ItemGroup>
 
 </Project>

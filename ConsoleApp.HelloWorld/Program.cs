@@ -1,7 +1,7 @@
 ﻿using Autofac;
-using Sovitex.Adaptors.Autofac;
-using SovitexLib.Core.Smart;
-using SovitexLib.Core.Smart.Behaviors;
+using DuckType.Adaptors.Autofac;
+using DuckType.Core.Smart;
+using DuckType.Core.Smart.Behaviors;
 
 namespace ConsoleApp.HelloWorld
 {

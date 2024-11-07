@@ -1,5 +1,5 @@
 using System;
-using SovitexLib.Core.Smart.Behaviors;
+using DuckType.Core.Smart.Behaviors;
 
 namespace ConsoleApp.HelloWorld
 {
