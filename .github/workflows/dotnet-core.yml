@@ -52,7 +52,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Pack for NuGet
       run: |
-        dotnet pack ./DuckType.Core/DuckType.Core.nuspec --output ./output 
+        dotnet pack ./**/*.csproj --configuration Release --output ./output -p:PackageVersion=1.0.3
     - name: Publish to NuGet
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}

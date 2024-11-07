@@ -2,6 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
+        <PackageId>DuckType.Core</PackageId>
+        <Authors>Stijn Van Antwerpen</Authors>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
