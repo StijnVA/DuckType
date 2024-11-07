@@ -144,7 +144,7 @@ smartQuux.DoStuff();  // Executes normally if it’s nighttime
 
 ## Acknowledgement
 
-The heavy lifting was already been done by [Castle.Core](/Castle.Core).
+The heavy lifting was already been done by [Castle.Core](https://www.castleproject.org/).
 
 ## Contributing
 
