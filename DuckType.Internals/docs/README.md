@@ -1,0 +1,1 @@
+This package is a dependency for [DuckType.Core](/DuckType.Core) and not intended to be included directly.

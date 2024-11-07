@@ -18,7 +18,7 @@ namespace DuckType.Core.Smart
         }
         
 
-        public static T DuckType<T>(this object self, Action<DuckTypeOptions> options = null) where T : class
+        public static T AsDuck<T>(this object self, Action<DuckTypeOptions> options = null) where T : class
         {
             return new DuckTypeFactory().CreateDuckedTypeObject<T>(self, options);
         }

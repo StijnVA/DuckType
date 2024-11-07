@@ -22,7 +22,7 @@ namespace DuckType.Core.Tests.Smart
         [Fact]
         public void TheSmartEmailPropertyCanBeSetWithAValideValue_Interface()
         {
-            var original = (IMyClass) new MyClassFromInterface();
+            IMyClass original = new MyClassFromInterface();
             var smart = original.MakeSmart();
             smart.EmailAddress = "eddy.freddy@example.com";
             smart.EmailAddress.Should().Be("eddy.freddy@example.com");
@@ -33,6 +33,7 @@ namespace DuckType.Core.Tests.Smart
         {
             var original = new MyClass();
             var smart = original.MakeSmart();
+            
             smart.GetSmartController()
                 .ForProperty(e => e.EmailAddress)
                 .AddBehavior(new AllowOnlyEmailAddress());
