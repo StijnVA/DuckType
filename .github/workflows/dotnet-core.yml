@@ -50,9 +50,9 @@ jobs:
       run: dotnet restore
     - name: Build for Release
       run: dotnet build --configuration Release --no-restore
-    - name: Publish to GitHub Packages
+    - name: Pack for NuGet
+      run: dotnet pack --configuration Release --output ./output
+    - name: Publish to NuGet
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        dotnet pack --configuration Release --output ./output
-        dotnet nuget push ./output/*.nupkg --source "github" --api-key "${{ secrets.GITHUB_TOKEN }}"
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push ./output/*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
