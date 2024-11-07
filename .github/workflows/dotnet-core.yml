@@ -55,7 +55,7 @@ jobs:
     - name: Publish to NuGet
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-      run: 
+      run: |
         dotnet nuget push ./output/DuckType.Core.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
         dotnet nuget push ./output/DuckType.Adaptors.FluentValidation.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
         dotnet nuget push ./output/DuckType.Adaptors.Autofac.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
