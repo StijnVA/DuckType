@@ -51,7 +51,7 @@ jobs:
     - name: Build for Release
       run: dotnet build --configuration Release --no-restore
     - name: Pack for NuGet
-      run: dotnet pack --configuration Release --output ./output -p:PackageVersion=1.0.1
+      run: dotnet pack --configuration Release --output ./output -p:PackageVersion=1.0.2
     - name: Publish to NuGet
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
