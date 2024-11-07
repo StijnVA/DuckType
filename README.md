@@ -25,7 +25,7 @@ This library is primarily intended for scenarios where interfaces must be dynami
 Add the library to your project (assuming it’s available via NuGet or source).
 
 ```shell
-dotnet add package DuckTypeSmartObjectLibrary
+dotnet add package DuckType.Core
 ```
 
 ### Basic Usage
