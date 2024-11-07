@@ -1,1 +1,1 @@
-This package is a dependency for [DuckType.Core](/DuckType.Core) and not intended to be included directly.
+This package is a dependency for [DuckType.Core](https://www.nuget.org/packages/DuckType.Core/) and not intended to be included directly.

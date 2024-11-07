@@ -5,6 +5,8 @@
         <PackageId>DuckType.Core</PackageId>
         <Authors>Stijn Van Antwerpen</Authors>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/StijnVA/DuckType</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
