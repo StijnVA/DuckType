@@ -45,14 +45,14 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.101
+        dotnet-version: 5.0.x
     - name: Install dependencies
       run: dotnet restore
     - name: Build for Release
       run: dotnet build --configuration Release --no-restore
     - name: Pack for NuGet
       run: |
-        dotnet pack ./DuckType.Core/DuckType.Core.csproj --configuration Release --output ./output -p:PackageVersion=1.0.4
+        dotnet pack --configuration Release --output ./output -p:PackageVersion=1.0.5
     - name: Publish to NuGet
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
