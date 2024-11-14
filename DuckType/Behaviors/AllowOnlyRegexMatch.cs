@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
+using DuckType.Core.Smart;
 
-namespace DuckType.Core.Smart.Behaviors
+namespace DuckType.Behaviors
 {
     public abstract class AllowOnlyRegexMatch : ISmartPropertyBehavior<string>
     {

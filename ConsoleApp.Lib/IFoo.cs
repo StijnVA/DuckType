@@ -1,4 +1,4 @@
-namespace ConsoleApp.HelloWorld
+namespace ConsoleApp.Lib
 {
     public interface IFoo
     {

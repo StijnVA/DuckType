@@ -16,7 +16,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DuckType.Core\DuckType.Core.csproj" />
+        <ProjectReference Include="..\DuckType\DuckType.csproj" />
+        <ProjectReference Include="..\DuckType.Core\DuckType.Core.csproj" />
+        <ProjectReference Include="..\DuckType.Extensions\DuckType.Extensions.csproj" />
     </ItemGroup>
 
 </Project>

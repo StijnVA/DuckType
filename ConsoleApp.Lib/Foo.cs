@@ -1,8 +1,8 @@
 using System;
 using DuckType.Adaptors.FluentValidation;
-using DuckType.Core.Smart.Attributes;
+using DuckType.Extensions.Attributes;
 
-namespace ConsoleApp.HelloWorld
+namespace ConsoleApp.Lib
 {
     [SmartFluentValidation(typeof(FooValidator))]
     public class Foo : IFoo

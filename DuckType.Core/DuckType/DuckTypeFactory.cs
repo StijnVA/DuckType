@@ -1,9 +1,10 @@
 ﻿using System;
 using Castle.DynamicProxy;
+using DuckType.Core.Smart;
 
 namespace DuckType.Core.DuckType
 {
-    public class DuckTypeFactory
+    public class DuckTypeFactory : IDuckTypeFactory
     {
         public T CreateDuckedTypeObject<T>(object original, Action<DuckTypeOptions> options = null) where T : class
         {

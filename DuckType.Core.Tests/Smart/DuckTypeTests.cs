@@ -1,7 +1,7 @@
 ﻿using DuckType.Core.DuckType;
 using DuckType.Core.Tests.Dummies;
 using FluentAssertions;
-using DuckType.Core.Smart;
+using DuckType;
 using Xunit;
 
 namespace DuckType.Core.Tests.Smart

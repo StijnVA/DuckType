@@ -1,4 +1,4 @@
-﻿using DuckType.Core.Smart.Attributes;
+﻿using DuckType.Attributes;
 
 namespace DuckType.Core.Tests.Dummies
 {
