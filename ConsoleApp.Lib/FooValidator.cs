@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace ConsoleApp.HelloWorld
+namespace ConsoleApp.Lib
 {
     public class FooValidator : AbstractValidator<IFoo>
     {

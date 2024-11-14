@@ -1,9 +1,10 @@
 ﻿using System;
 using DuckType.Core.DuckType;
+using DuckType.Core.Smart;
 
-namespace DuckType.Core.Smart
+namespace DuckType
 {
-    public static class SmartExtensions
+    public static class ExtensionMethods
     {
         public static T MakeSmart<T>(this T self) where T : class
         {
@@ -18,9 +19,10 @@ namespace DuckType.Core.Smart
         }
         
 
-        public static T AsDuck<T>(this object self, Action<DuckTypeOptions> options = null) where T : class
+        public static T AsDuck<T>(this object self, Action<DuckTypeOptions> options = null, IDuckTypeFactory duckTypeFactory = null) where T : class
         {
-            return new DuckTypeFactory().CreateDuckedTypeObject<T>(self, options);
+            duckTypeFactory ??= new DuckTypeFactory();
+            return duckTypeFactory.CreateDuckedTypeObject<T>(self, options);
         }
     }
 }

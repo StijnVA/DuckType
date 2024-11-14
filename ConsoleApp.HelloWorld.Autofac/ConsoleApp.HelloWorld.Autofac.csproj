@@ -7,13 +7,14 @@
 
     <ItemGroup>
       <PackageReference Include="Autofac" Version="5.2.0" />
-      <PackageReference Include="FluentValidation" Version="8.6.2" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ConsoleApp.Lib\ConsoleApp.Lib.csproj" />
       <ProjectReference Include="..\DuckType.Adaptors.Autofac\DuckType.Adaptors.Autofac.csproj" />
       <ProjectReference Include="..\DuckType.Adaptors.FluentValidation\DuckType.Adaptors.FluentValidation.csproj" />
       <ProjectReference Include="..\DuckType.Core\DuckType.Core.csproj" />
+      <ProjectReference Include="..\DuckType\DuckType.csproj" />
     </ItemGroup>
 
 </Project>

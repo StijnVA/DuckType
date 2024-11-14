@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Reflection;
+using DuckType.Core.Smart;
+using DuckType.Core.Smart.Behaviors;
 
-namespace DuckType.Core.Smart.Behaviors
+namespace DuckType.Extensions.Behaviors
 {
     public class VampireBehavior : ISmartActionBehavior
     {

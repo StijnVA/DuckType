@@ -1,4 +1,4 @@
-﻿namespace DuckType.Core.Smart.Behaviors
+﻿namespace DuckType.Behaviors
 {
     public class AllowOnlyEmailAddress : AllowOnlyRegexMatch
     {

@@ -2,6 +2,8 @@
 using DuckType.Core.Smart;
 using DuckType.Core.Smart.Behaviors;
 using DuckType.Core.Tests.Dummies;
+using DuckType.Behaviors;
+using DuckType.Extensions.Behaviors;
 using FluentAssertions;
 using Moq;
 using Xunit;

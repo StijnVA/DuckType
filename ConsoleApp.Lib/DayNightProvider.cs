@@ -1,8 +1,11 @@
 using System;
 using DuckType.Core.Smart.Behaviors;
 
-namespace ConsoleApp.HelloWorld
+namespace ConsoleApp.Lib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class DayNightProvider : IDayNightProvider
     {
         public bool IsDayLight()

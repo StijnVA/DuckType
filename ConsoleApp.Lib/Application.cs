@@ -1,8 +1,8 @@
 using System;
 
-namespace ConsoleApp.HelloWorld
+namespace ConsoleApp.Lib
 {
-    internal class Application
+    public class Application
     {
         private readonly IFoo _foo;
 

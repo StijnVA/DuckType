@@ -18,7 +18,7 @@ namespace DuckType.Core.Smart
 
         private void SetResolverInternal(IResolver resolver)
         {
-            _resolver = resolver;
+            Resolver = resolver;
         }
 
         public static T GenerateSmartObject<T>(T original) where T : class
@@ -27,7 +27,19 @@ namespace DuckType.Core.Smart
         }
 
         private readonly ProxyGenerator _proxyGenerator = new ProxyGenerator();
+
         private IResolver _resolver;
+        private IResolver Resolver
+        {
+            get => _resolver ??= new DefaultResolver();
+            set
+            {
+                if (_resolver != null) 
+                    throw new SmartException("Resolver has already been set in the SmartObjectFactory");
+                
+                _resolver = value; 
+            }
+        }
 
         private TEntity GenerateSmartObjectInternal<TEntity>(TEntity obj)
         {
@@ -52,7 +64,7 @@ namespace DuckType.Core.Smart
             var attributes = smartController.Entity.GetType().GetCustomAttributes(typeof(ISmartAttribute), true).Cast<ISmartAttribute>();
             foreach (var attribute in attributes)
             {
-                smartController.AddHandler(new SmartClassHandler((ISmartClassBehavior)attribute.GetBehavior(_resolver)));
+                smartController.AddHandler(new SmartClassHandler((ISmartClassBehavior)attribute.GetBehavior(Resolver)));
             }
         }
 
@@ -73,7 +85,7 @@ namespace DuckType.Core.Smart
                         .MakeGenericType(
                             entityType,
                             propertyInfo.PropertyType);
-                    dynamic handler = Activator.CreateInstance(type, attribute.GetBehavior(_resolver), propertySelector);
+                    dynamic handler = Activator.CreateInstance(type, attribute.GetBehavior(Resolver), propertySelector);
                     smartController.AddHandler(handler);
                 }
             }
@@ -86,7 +98,7 @@ namespace DuckType.Core.Smart
             {
                 foreach (var attribute in attributes)
                 {
-                    var behavior =  attribute.GetBehavior(_resolver) as ISmartActionBehavior; 
+                    var behavior =  attribute.GetBehavior(Resolver) as ISmartActionBehavior; 
                     smartController.AddHandler(new SmartActionHandler<TEntity>(memberInfo, behavior));
                 }
             }

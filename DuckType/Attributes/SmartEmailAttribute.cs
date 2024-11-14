@@ -1,8 +1,9 @@
 ﻿using System;
-using DuckType.Core.Smart.Behaviors;
+using DuckType.Behaviors;
+using DuckType.Core.Smart;
 using DuckType.Internals;
 
-namespace DuckType.Core.Smart.Attributes
+namespace DuckType.Attributes
 {
     public class SmartEmailAttribute : Attribute, ISmartPropertyAttribute<string>
     {

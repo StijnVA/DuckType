@@ -1,9 +1,11 @@
 ﻿using Autofac;
+using ConsoleApp.Lib;
+using DuckType;
 using DuckType.Adaptors.Autofac;
 using DuckType.Core.Smart;
 using DuckType.Core.Smart.Behaviors;
 
-namespace ConsoleApp.HelloWorld
+namespace ConsoleApp.HelloWorld.Autofac
 {
     class Program
     {
