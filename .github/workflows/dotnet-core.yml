@@ -57,8 +57,9 @@ jobs:
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
       run: |
-        dotnet nuget push ./output/DuckType.1.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
-        dotnet nuget push ./output/DuckType.Core.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
-        dotnet nuget push ./output/DuckType.Internals.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
-        dotnet nuget push ./output/DuckType.Adaptors.FluentValidation.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
-        dotnet nuget push ./output/DuckType.Adaptors.Autofac.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
+        dotnet nuget push ./output/DuckType.1.0.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
+        dotnet nuget push ./output/DuckType.Core.1.0.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
+        dotnet nuget push ./output/DuckType.Extensions.1.0.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
+        dotnet nuget push ./output/DuckType.Internals.1.0.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
+        dotnet nuget push ./output/DuckType.Adaptors.FluentValidation.1.0.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
+        dotnet nuget push ./output/DuckType.Adaptors.Autofac.1.0.*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY --skip-duplicate
