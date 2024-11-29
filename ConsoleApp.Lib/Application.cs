@@ -26,7 +26,7 @@ namespace ConsoleApp.Lib
             {
                 _foo.Max = 10;
                 _foo.Value = 5;
-                _foo.Value = 15; //should fail
+                _foo.Value = 15; //will throw exception
             }
             catch (Exception e)
             {

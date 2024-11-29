@@ -25,19 +25,19 @@ namespace DuckType.Core.Smart
             return new SmartActionController<TEntity>(this, actionSelector);
         }
 
-        public void HandleBefore(IInvocation invocation, SmartContext smartContext)
+        public void HandleBefore(SmartContext smartContext)
         {
             foreach (var smartHandler in _smartHandlers)
             {
-                (smartHandler as ISmartBeforeHandler)?.HandleBefore(invocation, smartContext, Entity);
+                (smartHandler as ISmartBeforeHandler)?.HandleBefore(smartContext, Entity);
             }
         }
         
-        public void HandleAfter(IInvocation invocation, SmartContext smartContext)
+        public void HandleAfter(SmartContext smartContext)
         {
             foreach (var smartHandler in _smartHandlers)
             {
-                (smartHandler as ISmartAfterHandler)?.HandleAfter(invocation, smartContext, Entity);
+                (smartHandler as ISmartAfterHandler)?.HandleAfter(smartContext, Entity);
             }
         }
 

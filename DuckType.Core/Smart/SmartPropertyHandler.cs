@@ -18,19 +18,19 @@ namespace DuckType.Core.Smart
             _propertySelector = propertySelector;
         }
 
-        public void HandleBefore(IInvocation invocation, SmartContext smartContext, object entity)
+        public void HandleBefore(SmartContext smartContext, object entity)
         {
-            if (IsInvocationOfPropertySet(invocation))
-            {
-                var value = (TProperty) invocation.Arguments.Single();
-                _propertyBehavior.BeforeSetValue(value);
-            }
+            if (!IsInvocationOfPropertySet(smartContext)) 
+                return;
+            
+            var value = (TProperty) smartContext.GetSetValue();
+            _propertyBehavior.BeforeSetValue(value, smartContext);
         }
 
-        private bool IsInvocationOfPropertySet(IInvocation invocation)
+        private bool IsInvocationOfPropertySet(SmartContext smartContext)
         {
             var setMethod = ((PropertyInfo)((MemberExpression) _propertySelector.Body).Member).SetMethod;
-            var invocationMethod = invocation.Method;
+            var invocationMethod = smartContext.GetInvokedMethod();
             
             return invocationMethod.IsImplementationOf(setMethod);
         }

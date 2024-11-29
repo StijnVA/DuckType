@@ -24,11 +24,12 @@ namespace DuckType.Core.Smart
             _actionBehavior = actionBehavior;
         }
 
-        public void HandleBefore(IInvocation invocation, SmartContext smartContext, object entity)
+        public void HandleBefore(SmartContext smartContext, object entity)
         {
-            if (invocation.Method.IsImplementationOf(_method))
+            var method = smartContext.GetInvokedMethod();
+            if (method.IsImplementationOf(_method))
             {
-                _actionBehavior.BeforeInvocation(invocation.Method);
+                _actionBehavior.BeforeInvocation(method);
             }
         }
     }

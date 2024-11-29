@@ -11,7 +11,7 @@ namespace DuckType.Core.Smart
             _behavior = behavior;
         }
 
-        public void HandleAfter<TEntity>(IInvocation invocation, SmartContext smartContext, TEntity entity)
+        public void HandleAfter<TEntity>(SmartContext smartContext, TEntity entity)
         {
             _behavior.AfterInvocation(entity);
         }

@@ -21,10 +21,13 @@ namespace DuckType.Core.Smart
             }
             else
             {
-                var smartContext = new SmartContext();
-                _smartController.HandleBefore(invocation, smartContext);
+                var smartContext = new SmartContext(invocation);
+                _smartController.HandleBefore(smartContext);
+                if(smartContext.ShouldIgnoreChange)
+                    return;
+                
                 invocation.Proceed();
-                _smartController.HandleAfter(invocation, smartContext);
+                _smartController.HandleAfter(smartContext);
             }
         }
     }

@@ -29,6 +29,16 @@ namespace DuckType.Core.Tests.Smart
             smart.EmailAddress = "eddy.freddy@example.com";
             smart.EmailAddress.Should().Be("eddy.freddy@example.com");
         }
+        
+        [Fact]
+        public void TheSmartEmailPropertyWillNotBeWithAnInvalideValue_Interface()
+        {
+            IMyClass original = new MyClassFromInterface();
+            var smart = original.MakeSmart();
+            smart.Invoking(s =>
+                    s.EmailAddress = "not an email address")
+                .Should().Throw<SmartException>();
+        }
 
         [Fact]
         public void TheSmartEmailPropertyShouldThrowAnExceptionWhenSetWithAnInvalidValue_Fluent()

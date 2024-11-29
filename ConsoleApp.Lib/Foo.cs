@@ -10,8 +10,8 @@ namespace ConsoleApp.Lib
         public int Min { get; set; }
         public int Max { get; set; }
         public int Value { get; set; }
-        
-        [SmartVampire]
+
+    [SmartVampire]
         public void DoStuff()
         {
             Console.WriteLine("I am doing stuff");

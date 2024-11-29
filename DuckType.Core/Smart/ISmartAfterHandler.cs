@@ -5,6 +5,6 @@ namespace DuckType.Core.Smart
     public interface ISmartAfterHandler : ISmartHandler
     {
       
-        void HandleAfter<TEntity>(IInvocation invocation, SmartContext smartContext, TEntity entity);
+        void HandleAfter<TEntity>(SmartContext smartContext, TEntity entity);
     }
 }
