@@ -21,7 +21,7 @@ dotnet add package DuckType
 ```
 
 ### Basic Usage
-TODO
+See https://github.com/StijnVA/DuckType/wiki for the getting started
 
 ## Acknowledgement
 
