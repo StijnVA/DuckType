@@ -11,7 +11,7 @@ namespace DuckType.Behaviors
         {
             _regex = regex;
         }
-        public void BeforeSetValue(string value)
+        public void BeforeSetValue(string value, SmartContext _)
         {
             if (!Regex.IsMatch(value, _regex))
             {

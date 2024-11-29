@@ -17,4 +17,18 @@ namespace DuckType.Attributes
             return GetBehavior(resolver);
         }
     }
+
+    public class MaxLengthAttribute(int maxLength, CompensationBehavior compensationBehavior = CompensationBehavior.ThrowException) : Attribute, ISmartPropertyAttribute<string>
+    {
+
+        public ISmartPropertyBehavior<string> GetBehavior(IResolver resolver)
+        {
+            return new MaxLength(maxLength, compensationBehavior);
+        }
+
+        ISmartBehavior ISmartAttribute.GetBehavior(IResolver resolver)
+        {
+            return GetBehavior(resolver);
+        }
+    }
 }

@@ -2,14 +2,6 @@
 {
     public interface ISmartPropertyBehavior<in TProperty> : ISmartBehavior
     {
-        void BeforeSetValue(TProperty value)
-        {
-        }
-
-
-        void BeforeSetValue(TProperty value, SmartContext smartContext)
-        {
-            BeforeSetValue(value);
-        }
+        void BeforeSetValue(TProperty value, SmartContext smartContext);
     }
 }

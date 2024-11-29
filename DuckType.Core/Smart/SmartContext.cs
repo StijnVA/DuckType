@@ -16,12 +16,13 @@ namespace DuckType.Core.Smart
         }
 
         public bool ShouldIgnoreChange { get; private set; }
+        public string PropertyName => _invocation.Method.Name[4..]; 
 
         public object GetCurrentPropertyValue()
         {
-            var propertyName = _invocation.Method.Name[4..];
-            var propertyInfo = _invocation.TargetType.GetProperty(propertyName)
-                ?? throw new Exception($"Property '{propertyName}' does not exist on type '{_invocation.TargetType.FullName}'");
+            
+            var propertyInfo = _invocation.TargetType.GetProperty(PropertyName)
+                ?? throw new Exception($"Property '{PropertyName}' does not exist on type '{_invocation.TargetType.FullName}'");
             var value = propertyInfo.GetValue(_invocation.InvocationTarget);
             return value;
         }
