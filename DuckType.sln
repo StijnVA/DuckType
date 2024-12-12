@@ -6,8 +6,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 SolutionItems", "0 Soluti
 ProjectSection(SolutionItems) = preProject
 	.gitignore = .gitignore
 	.github\workflows\dotnet-core.yml = .github\workflows\dotnet-core.yml
-	README.md = README.md
-	LICENSE = LICENSE
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Core", "1 Core", "{565A4D26-46AB-4D57-8190-9422239A775F}"

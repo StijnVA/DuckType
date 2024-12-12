@@ -8,5 +8,9 @@
     <ItemGroup>
         <None Include="docs\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\content\README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
     
 </Project>
